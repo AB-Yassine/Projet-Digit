@@ -1,0 +1,43 @@
+|led_test
+CLK => prev_BTN_up_state.CLK
+CLK => ligne_counter[0].CLK
+CLK => ligne_counter[1].CLK
+CLK => ligne_counter[2].CLK
+CLK => ground_matrix[0]~reg0.CLK
+CLK => ground_matrix[1]~reg0.CLK
+CLK => ground_matrix[2]~reg0.CLK
+CLK => ground_matrix[3]~reg0.CLK
+CLK => ground_matrix[4]~reg0.CLK
+CLK => ground_matrix[5]~reg0.CLK
+CLK => ground_matrix[6]~reg0.CLK
+CLK => LED_matrix[0]~reg0.CLK
+CLK => LED_matrix[1]~reg0.CLK
+CLK => LED_matrix[2]~reg0.CLK
+CLK => LED_matrix[3]~reg0.CLK
+CLK => LED_matrix[4]~reg0.CLK
+CLK => player[0].CLK
+CLK => player[1].CLK
+CLK => player[2].CLK
+CLK => player[3].CLK
+CLK => player[4].CLK
+CLK => player_pos[0].CLK
+CLK => player_pos[1].CLK
+CLK => player_pos[2].CLK
+LED_matrix[0] <= LED_matrix[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_matrix[1] <= LED_matrix[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_matrix[2] <= LED_matrix[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_matrix[3] <= LED_matrix[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_matrix[4] <= LED_matrix[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[0] << ground_matrix[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[1] << ground_matrix[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[2] << ground_matrix[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[3] << ground_matrix[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[4] << ground_matrix[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[5] << ground_matrix[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ground_matrix[6] << ground_matrix[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BTN_up => prev_BTN_up_state.DATAIN
+BTN_up => process_0.IN1
+BTN_down => ~NO_FANOUT~
+vdd <= <VCC>
+
+

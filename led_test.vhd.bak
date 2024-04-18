@@ -1,0 +1,18 @@
+-- Déclaration de l'entité
+entity LED_Controller is
+    Port (
+        CLK : in std_logic;  -- Signal d'horloge
+        LED_output : out std_logic  -- Signal de sortie pour contrôler la LED
+    );
+end LED_Controller;
+
+-- Architecture de l'entité
+architecture Behavioral of LED_Controller is
+begin
+    process(CLK)
+    begin
+        if rising_edge(CLK) then  -- Vérifie le front montant de l'horloge
+            LED_output <= '1';  -- Allume la LED en mettant la sortie à '1'
+        end if;
+    end process;
+end Behavioral;
