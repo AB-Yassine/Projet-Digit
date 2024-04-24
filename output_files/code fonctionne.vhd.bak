@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+-- Déclaration de l'entité
+entity led_test is
+    Port (
+        CLK : in std_logic;  -- Signal d'horloge
+        LED_output_1 : out std_logic; -- Signal de sortie pour contrôler la LED
+		  LED_output_2 : out std_logic;
+		  LED_output_3 : out std_logic;
+		  ground_1 : out std_logic; 
+		  ground_2 : out std_logic;
+		  ground_3 : out std_logic;
+		  ground_4 : out std_logic;
+		  ground_5 : out std_logic;
+		  ground_6 : out std_logic;
+		  ground_7 : out std_logic;
+		  ground_7_segment : out std_logic
+    );
+end led_test;
+
+-- Architecture de l'entité
+
+architecture Behavioral of led_test is
+begin
+    process(CLK)
+    begin
+        if rising_edge(CLK) then  -- Vérifie le front montant de l'horloge
+            LED_output_1 <= '1';  -- Allume la LED en mettant la sortie à '1'
+				LED_output_2 <= '1';
+				LED_output_3 <= '1';
+				ground_1 <= '0';
+				ground_2 <= '0';
+				ground_3 <= '0';
+				ground_4 <= '0';
+				ground_5 <= '0';
+				ground_6 <= '0';
+				ground_7 <= '0';
+        end if;
+    end process;
+end Behavioral;

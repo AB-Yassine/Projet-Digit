@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Thu Apr 18 14:58:57 2024
+Analysis & Synthesis Status : Successful - Wed Apr 24 10:30:58 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : led_test
 Top-level Entity Name : led_test
 Family : MAX V
-Total logic elements : 49
-Total pins : 16
+Total logic elements : 143
+Total pins : 24
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

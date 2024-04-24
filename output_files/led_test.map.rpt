@@ -1,5 +1,5 @@
 Analysis & Synthesis report for led_test
-Thu Apr 18 14:58:57 2024
+Wed Apr 24 10:30:58 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,11 +13,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 12. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +45,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Apr 18 14:58:57 2024       ;
+; Analysis & Synthesis Status ; Successful - Wed Apr 24 10:30:58 2024       ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; led_test                                    ;
 ; Top-level Entity Name       ; led_test                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 49                                          ;
-; Total pins                  ; 16                                          ;
+; Total logic elements        ; 143                                         ;
+; Total pins                  ; 24                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -159,6 +161,12 @@ refer to the applicable agreement for further details.
 ; db/add_sub_j4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_j4c.tdf         ;         ;
 ; db/add_sub_k4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_k4c.tdf         ;         ;
 ; db/add_sub_l4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_l4c.tdf         ;         ;
+; db/lpm_divide_n2o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/lpm_divide_n2o.tdf      ;         ;
+; db/abs_divider_4ag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/abs_divider_4ag.tdf     ;         ;
+; db/alt_u_div_hfe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/alt_u_div_hfe.tdf       ;         ;
+; db/add_sub_m4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_m4c.tdf         ;         ;
+; db/lpm_abs_da9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/lpm_abs_da9.tdf         ;         ;
+; db/add_sub_dse.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_dse.tdf         ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -167,50 +175,67 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 49    ;
-;     -- Combinational with no register       ; 25    ;
-;     -- Register only                        ; 1     ;
-;     -- Combinational with a register        ; 23    ;
+; Total logic elements                        ; 143   ;
+;     -- Combinational with no register       ; 87    ;
+;     -- Register only                        ; 8     ;
+;     -- Combinational with a register        ; 48    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 16    ;
-;     -- 3 input functions                    ; 15    ;
-;     -- 2 input functions                    ; 10    ;
-;     -- 1 input functions                    ; 7     ;
+;     -- 4 input functions                    ; 36    ;
+;     -- 3 input functions                    ; 54    ;
+;     -- 2 input functions                    ; 28    ;
+;     -- 1 input functions                    ; 17    ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 40    ;
-;     -- arithmetic mode                      ; 9     ;
+;     -- normal mode                          ; 127   ;
+;     -- arithmetic mode                      ; 16    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 1     ;
+;     -- synchronous clear/load mode          ; 12    ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 24    ;
-; Total logic cells in carry chains           ; 13    ;
-; I/O pins                                    ; 16    ;
+; Total registers                             ; 56    ;
+; Total logic cells in carry chains           ; 24    ;
+; I/O pins                                    ; 24    ;
 ; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 24    ;
-; Total fan-out                               ; 194   ;
-; Average fan-out                             ; 2.98  ;
+; Maximum fan-out                             ; 34    ;
+; Total fan-out                               ; 512   ;
+; Average fan-out                             ; 3.07  ;
 +---------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                ;
-+----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
-+----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |led_test                              ; 49 (29)     ; 24           ; 0          ; 16   ; 0            ; 25 (5)       ; 1 (1)             ; 23 (23)          ; 13 (1)          ; 0 (0)      ; |led_test                                                                                                                       ; led_test            ; work         ;
-;    |lpm_divide:Mod0|                   ; 20 (0)      ; 0            ; 0          ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
-;       |lpm_divide_tkl:auto_generated|  ; 20 (0)      ; 0            ; 0          ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated                                                                         ; lpm_divide_tkl      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 20 (0)      ; 0            ; 0          ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_dfe:divider|    ; 20 (8)      ; 0            ; 0          ; 0    ; 0            ; 20 (8)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider                       ; alt_u_div_dfe       ; work         ;
-;                |add_sub_k4c:add_sub_2| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider|add_sub_k4c:add_sub_2 ; add_sub_k4c         ; work         ;
-;                |add_sub_l4c:add_sub_3| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider|add_sub_l4c:add_sub_3 ; add_sub_l4c         ; work         ;
-+----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                 ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |led_test                               ; 143 (100)   ; 56           ; 0          ; 24   ; 0            ; 87 (44)      ; 8 (8)             ; 48 (48)          ; 24 (0)          ; 0 (0)      ; |led_test                                                                                                                       ; led_test            ; work         ;
+;    |lpm_divide:Mod0|                    ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 13 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_tkl:auto_generated|   ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 13 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated                                                                         ; lpm_divide_tkl      ; work         ;
+;          |sign_div_unsign_7kh:divider|  ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 13 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_dfe:divider|     ; 22 (9)      ; 0            ; 0          ; 0    ; 0            ; 22 (9)       ; 0 (0)             ; 0 (0)            ; 13 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider                       ; alt_u_div_dfe       ; work         ;
+;                |add_sub_k4c:add_sub_2|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider|add_sub_k4c:add_sub_2 ; add_sub_k4c         ; work         ;
+;                |add_sub_l4c:add_sub_3|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |led_test|lpm_divide:Mod0|lpm_divide_tkl:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_dfe:divider|add_sub_l4c:add_sub_3 ; add_sub_l4c         ; work         ;
+;    |lpm_divide:Mod1|                    ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod1                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_n2o:auto_generated|   ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated                                                                         ; lpm_divide_n2o      ; work         ;
+;          |abs_divider_4ag:divider|      ; 21 (3)      ; 0            ; 0          ; 0    ; 0            ; 21 (3)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated|abs_divider_4ag:divider                                                 ; abs_divider_4ag     ; work         ;
+;             |add_sub_dse:compl_add_rem| ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated|abs_divider_4ag:divider|add_sub_dse:compl_add_rem                       ; add_sub_dse         ; work         ;
+;             |alt_u_div_hfe:divider|     ; 12 (5)      ; 0            ; 0          ; 0    ; 0            ; 12 (5)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated|abs_divider_4ag:divider|alt_u_div_hfe:divider                           ; alt_u_div_hfe       ; work         ;
+;                |add_sub_m4c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated|abs_divider_4ag:divider|alt_u_div_hfe:divider|add_sub_m4c:add_sub_4     ; add_sub_m4c         ; work         ;
+;             |lpm_abs_da9:my_abs_num|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |led_test|lpm_divide:Mod1|lpm_divide_n2o:auto_generated|abs_divider_4ag:divider|lpm_abs_da9:my_abs_num                          ; lpm_abs_da9         ; work         ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                   ;
++---------------------------------------+------------------------------+
+; Register name                         ; Reason for Removal           ;
++---------------------------------------+------------------------------+
+; pseudo_random[0]                      ; Merged with ligne_counter[0] ;
+; Total Number of Removed Registers = 1 ;                              ;
++---------------------------------------+------------------------------+
 
 
 +------------------------------------------------------+
@@ -218,12 +243,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 24    ;
-; Number of registers using Synchronous Clear  ; 1     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 56    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 33    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -233,8 +258,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; player[2]                              ; 4       ;
-; Total number of inverted registers = 1 ;         ;
+; mur[0]                                 ; 2       ;
+; mur[1]                                 ; 2       ;
+; player[2]                              ; 2       ;
+; mur[3]                                 ; 2       ;
+; mur[4]                                 ; 2       ;
+; vie_count[1]                           ; 5       ;
+; vie_count[0]                           ; 6       ;
+; player_pos[1]                          ; 17      ;
+; Total number of inverted registers = 8 ;         ;
 +----------------------------------------+---------+
 
 
@@ -243,9 +275,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; Yes        ; |led_test|ground_matrix[0]~reg0 ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |led_test|LED_matrix[0]~reg0    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |led_test|player_pos[0]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |led_test|player_pos[0]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |led_test|segment_7_count[0]    ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; Yes        ; |led_test|ground_matrix_mur[4]  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |led_test|ground_matrix[3]~reg0 ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |led_test|LED_matrix[0]~reg0    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |led_test|vie_count[1]          ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |led_test|mur[0]                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
@@ -272,26 +308,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_n2o ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Apr 18 14:58:45 2024
+    Info: Processing started: Wed Apr 24 10:30:35 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off led_test -c led_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file led_test.vhd
-    Info (12022): Found design unit 1: led_test-Behavioral File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 17
-    Info (12023): Found entity 1: led_test File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 5
-Warning (12019): Can't analyze file -- file output_files/code fonctionne.vhd is missing
+    Info (12022): Found design unit 1: led_test-Behavioral File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 22
+    Info (12023): Found entity 1: led_test File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 7
+Info (12021): Found 0 design units, including 0 entities, in source file output_files/code fonctionne.vhd
 Info (12127): Elaborating entity "led_test" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at led_test.vhd(12): used explicit default value for signal "vdd" because signal was never assigned a value File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 12
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 35
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 35
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 35
+Warning (10540): VHDL Signal Declaration warning at led_test.vhd(15): used explicit default value for signal "vdd" because signal was never assigned a value File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 15
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 66
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 59
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 59
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -310,18 +370,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_k4c File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_k4c.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l4c.tdf
     Info (12023): Found entity 1: add_sub_l4c File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_l4c.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 66
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 66
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_n2o.tdf
+    Info (12023): Found entity 1: lpm_divide_n2o File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/lpm_divide_n2o.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4ag.tdf
+    Info (12023): Found entity 1: abs_divider_4ag File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/abs_divider_4ag.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_hfe.tdf
+    Info (12023): Found entity 1: alt_u_div_hfe File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/alt_u_div_hfe.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_m4c.tdf
+    Info (12023): Found entity 1: add_sub_m4c File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_m4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_da9.tdf
+    Info (12023): Found entity 1: lpm_abs_da9 File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/lpm_abs_da9.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dse.tdf
+    Info (12023): Found entity 1: add_sub_dse File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/db/add_sub_dse.tdf Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vdd" is stuck at VCC File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 12
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "BTN_down" File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 11
-Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 49 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4772 megabytes
-    Info: Processing ended: Thu Apr 18 14:58:57 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+    Warning (13410): Pin "vdd" is stuck at VCC File: C:/Users/letou/OneDrive/Bureau/Ulg/Master 1/Q2/Digit/Projet/led_test.vhd Line: 15
+Info (21057): Implemented 167 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 143 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4775 megabytes
+    Info: Processing ended: Wed Apr 24 10:30:58 2024
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:21
 
 

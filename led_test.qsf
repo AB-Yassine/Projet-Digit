@@ -66,3 +66,11 @@ set_location_assignment PIN_60 -to LED_matrix[3]
 set_location_assignment PIN_59 -to LED_matrix[4]
 set_location_assignment PIN_58 -to vdd
 set_location_assignment PIN_56 -to BTN_up
+set_location_assignment PIN_55 -to BTN_down
+set_location_assignment PIN_1 -to segment_7[0]
+set_location_assignment PIN_2 -to segment_7[1]
+set_location_assignment PIN_3 -to segment_7[2]
+set_location_assignment PIN_4 -to segment_7[3]
+set_location_assignment PIN_5 -to vie[0]
+set_location_assignment PIN_11 -to vie[1]
+set_location_assignment PIN_12 -to vie[2]

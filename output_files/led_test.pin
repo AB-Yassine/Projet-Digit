@@ -62,18 +62,18 @@ CHIP  "led_test"  ASSIGNED TO AN: 5M160ZE64C5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-GND*                         : 1         :        :                   :         : 1         :                
-GND*                         : 2         :        :                   :         : 1         :                
-GND*                         : 3         :        :                   :         : 1         :                
-GND*                         : 4         :        :                   :         : 1         :                
-BTN_down                     : 5         : input  : 3.3-V LVTTL       :         : 1         : N              
+segment_7[0]                 : 1         : output : 3.3-V LVTTL       :         : 1         : Y              
+segment_7[1]                 : 2         : output : 3.3-V LVTTL       :         : 1         : Y              
+segment_7[2]                 : 3         : output : 3.3-V LVTTL       :         : 1         : Y              
+segment_7[3]                 : 4         : output : 3.3-V LVTTL       :         : 1         : Y              
+vie[0]                       : 5         : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 6         : power  :                   : 3.3V    : 1         :                
 CLK                          : 7         : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCINT                       : 8         : power  :                   : 1.8V    :           :                
-GND*                         : 9         :        :                   :         : 1         :                
+CLK1                         : 9         : input  : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 10        :        :                   :         : 1         :                
-GND*                         : 11        :        :                   :         : 1         :                
-GND*                         : 12        :        :                   :         : 1         :                
+vie[1]                       : 11        : output : 3.3-V LVTTL       :         : 1         : Y              
+vie[2]                       : 12        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 13        :        :                   :         : 1         :                
 TMS                          : 14        : input  :                   :         : 1         :                
 TDI                          : 15        : input  :                   :         : 1         :                
@@ -116,7 +116,7 @@ GND*                         : 51        :        :                   :         
 GND*                         : 52        :        :                   :         : 2         :                
 ground_matrix[6]             : 53        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 54        :        :                   :         : 2         :                
-GND*                         : 55        :        :                   :         : 2         :                
+BTN_down                     : 55        : input  : 3.3-V LVTTL       :         : 2         : Y              
 BTN_up                       : 56        : input  : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 57        : power  :                   : 3.3V    : 2         :                
 vdd                          : 58        : output : 3.3-V LVTTL       :         : 2         : Y              
