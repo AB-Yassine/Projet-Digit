@@ -30,10 +30,10 @@ architecture Behavioral of led_test is
         signal ground_matrix_mur : std_logic_vector(6 downto 0);
 		  signal segment_7_count : natural range 0 to 9 := 0;
 		  signal game_over : boolean := false;
-		  signal mur_speed : natural := 1;
 		  
 		 signal pseudo_random : integer range 0 to 4;
 		 signal vie_count : integer range 0 to 3 := 3;
+		 signal speed : integer range 0 to 20 := 0;
 	 
 begin
 	-- Processus pour générer le nombre pseudo-aléatoire
@@ -55,7 +55,7 @@ begin
             if BTN_up = '0' and prev_BTN_up_state = '1' then 
                 
                 player(player_pos) <= '0';
-                player((player_pos + 1) mod 5) <= '1';
+                player((player_pos + 1)mod 5) <= '1';
 					 player_pos <= (player_pos + 1) mod 5;
             end if;
 				
@@ -112,6 +112,9 @@ begin
 	 process(CLK1)
 	 begin
 		if rising_edge(CLK1) then
+		  if speed + segment_7_count*2 /= 30 then 
+				speed <= speed + 1;
+		  else
 		
 			case ligne_counter_slow is
                 when 0 => -- Première Ligne
@@ -130,20 +133,19 @@ begin
 							end if;
 							
                 when 1 => -- Deuxième Ligne
-                    ground_matrix_mur <= "1011111" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1011111";
                 when 2 => -- Troisième Ligne
-                    ground_matrix_mur <= "1101111" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1101111";
                 when 3 => -- Troisième Ligne
-                    ground_matrix_mur <= "1110111" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1110111";
                 when 4 => -- Troisième Ligne
-                    ground_matrix_mur <= "1111011" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1111011";
                 when 5 => -- Troisième Ligne
-                    ground_matrix_mur <= "1111101" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1111101";
 						when 6 => -- Troisième Ligne
-                    ground_matrix_mur <= "1111110" after mur_speed * 50 ms;
+                    ground_matrix_mur <= "1111110";
 						  if mur(player_pos) = '0' then
 								segment_7_count <= segment_7_count + 1;
-								mur_speed <= mur_speed + 10;
 							else
 								vie_count <= vie_count - 1;
 								if vie_count = 1 then
@@ -157,6 +159,8 @@ begin
                     ligne_counter_slow <= 0; -- Revenir à la première colonne si on dépasse la troisième colonne
             end case;
 				ligne_counter_slow <= ligne_counter_slow + 1;
+				speed <= 0;
+			end if;
 		end if;
 	 end process;
 end Behavioral;
