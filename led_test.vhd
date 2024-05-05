@@ -31,9 +31,9 @@ architecture Behavioral of led_test is
 		signal ligne_counter_slow : integer range 0 to 7 :=0;
 		signal mur : std_logic_vector(4 downto 0) := "11011";
         signal ground_matrix_mur : std_logic_vector(6 downto 0);
-		  signal score : integer range 0 to 99 := 0; -- Score total
-		  signal score_units_digit : integer range 0 to 9 := 0; -- Chiffre des unités du score
-		  signal score_tens_digit : integer range 0 to 9 := 0; -- Chiffre des dizaines du score
+		  signal score : natural range 0 to 99 := 0; -- Score total
+		  signal score_units_digit : natural range 0 to 9 := 0; -- Chiffre des unités du score
+		  signal score_tens_digit : natural range 0 to 9 := 0; -- Chiffre des dizaines du score
 		  
 		 signal pseudo_random : integer range 0 to 4;
 		 signal life_count : integer range 0 to 3 := 3;
