@@ -13,7 +13,8 @@ entity led_test is
 		BTN_up : in std_logic := '0'; -- Signal du bouton
 		BTN_down : in std_logic := '0';
 		vdd : out std_logic := '1';
-		segment_7 : buffer std_logic_vector(3 downto 0) := "0000";
+		segment_7_1 : buffer std_logic_vector(3 downto 0) := "0000";
+	    	segment_7_2 : buffer std_logic_vector(3 downto 0) := "0000";
 		life : buffer std_logic_vector(2 downto 0) := "111";
 		BTN_reset : in std_logic := '0'
     );
@@ -30,7 +31,9 @@ architecture Behavioral of led_test is
 		signal ligne_counter_slow : integer range 0 to 7 :=0;
 		signal mur : std_logic_vector(4 downto 0) := "11011";
         signal ground_matrix_mur : std_logic_vector(6 downto 0);
-		  signal segment_7_count : natural range 0 to 9 := 0;
+		  signal score : integer range 0 to 99 := 0; -- Score total
+		  signal score_units_digit : integer range 0 to 9 := 0; -- Chiffre des unités du score
+		  signal score_tens_digit : integer range 0 to 9 := 0; -- Chiffre des dizaines du score
 		  
 		 signal pseudo_random : integer range 0 to 4;
 		 signal life_count : integer range 0 to 3 := 3;
@@ -141,9 +144,8 @@ begin
 	 variable mur_cst : std_logic_vector(4 downto 0) := "11111";
 	 begin
 		if rising_edge(CLK1) then
-		  if speed + segment_7_count*2 /= 30 then 
-				speed <= speed + 1;
-		  else
+			
+		  speed <= score_tens_digit*2;
 		  
 		  if game_reset_button = true then 
 				ligne_counter_slow <= 0;
@@ -183,10 +185,13 @@ begin
 						when 6 => -- Troisième Ligne
                     ground_matrix_mur <= "1111110";
 						  if mur(player_pos) = '0' then
-								segment_7_count <= segment_7_count + 1;
-								segment_7 <= std_logic_vector(to_unsigned(segment_7_count, segment_7'length));
+								score <= score + 1;
+								score_units_digit <= score mod 10;
+								score_tens_digit <= score / 10;
+								segment_7_1 <= std_logic_vector(to_unsigned(score_units_digit, segment_7_1'length));
+								segment_7_2 <= std_logic_vector(to_unsigned(score_tens_digit, segment_7_2'length));
 								
-								if segment_7_count = 9 then
+								if score = 99 then
 									state <= game_win;
 								end if;
 							else
